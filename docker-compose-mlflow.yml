@@ -35,5 +35,5 @@
           - MINIO_ROOT_PASSWORD=minio123
 
 networks:
-    app_net:
-        external: true
+  app_net:
+    external: true
