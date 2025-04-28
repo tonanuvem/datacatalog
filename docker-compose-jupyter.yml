@@ -10,7 +10,6 @@ services:
     networks:
       - app_net
     command: /bin/bash -c "mkdir -p /opt/nb && jupyter notebook --notebook-dir=/opt/nb --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
-#sudo yum install -y swig python3-devel
 
 networks:
   app_net:
