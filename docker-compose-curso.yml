@@ -4,8 +4,8 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: mysqldb
-      PMA_PORT: 3366
+      PMA_HOST: cursomysqld
+      PMA_PORT: 3306
       PMA_ARBITRARY: 1
       PMA_USER: admin
       PMA_PASSWORD: admin
@@ -14,7 +14,7 @@ services:
     depends_on: 
       - mysqldb
     
-  mysqldb:
+  cursomysqldb:
     #image: mysql:5.7 # bd vazio, sobe mais rapido
     image: tonanuvem/mysql:curso_db # bd com a tabela curso
     environment:
