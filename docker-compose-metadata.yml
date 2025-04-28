@@ -478,7 +478,7 @@ services:
       #  condition: service_healthy
       - execute-migrate-all:
       #  condition: service_completed_successfully
-    networks #:
+    networks:
       - app_net
     healthcheck:
       test: [ "CMD", "wget", "-q", "--spider",  "http://localhost:8586/healthcheck" ]
