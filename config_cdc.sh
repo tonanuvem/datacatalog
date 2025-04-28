@@ -25,4 +25,4 @@ curl -s -X POST http://localhost:8073/connectors \
         "include.schema.changes": "true"
       }
     }' \
-  | python -mjson.tool
+  | python3 -mjson.tool
