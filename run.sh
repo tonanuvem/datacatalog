@@ -1,0 +1,68 @@
+# TRABALHO CONTEMPLA AS SEGUINTES FERRAMENTAS:
+
+## JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML
+
+## ML FLOW PARA DEMONSTRAR FLUXO DE MLOPS
+
+## OPEN METADATA PARA DEMONSTRAR GOVERNANÇA DE DADOS, ESPECIALMENTE DATA DISCOVERY E DATA QUALITY
+
+
+# Executando local
+
+### JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML:
+
+docker run -it --name automl -v ${PWD}/mlops/exemplo/mlflow:/opt/nb -p 8789:8888 -d mfeurer/auto-sklearn:master /bin/bash -c "mkdir -p /opt/nb && jupyter notebook --notebook-dir=/opt/nb --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
+
+
+### ML FLOW PARA DEMONSTRAR FLUXO DE MLOPS:
+
+python3 -m venv mlflow
+source mlflow/bin/activate
+pip install mlflow
+mlflow server --host 0.0.0.0 --port 8089 &
+
+
+### OPEN METADATA:
+
+curl -sL -o docker-compose.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
+
+docker-compose -f docker-compose.yml up --detach
+
+AIRFLOW_msglog="INFO - Starting the scheduler"
+OPENMETADATA_msglog="Started application"
+
+echo ""
+echo "Aguardando a configuração do OPEN METADATA."
+while [ "$(docker logs openmetadata_ingestion 2>&1 | grep "$AIRFLOW_msglog" | wc -l)" != "1" ]; do
+  printf "."
+  sleep 1
+done
+while [ "$(docker logs openmetadata_server 2>&1 | grep "$OPENMETADATA_msglog" | wc -l)" != "1" ]; do
+  printf "."
+  sleep 1
+done
+
+### URLs DO PROJETO:
+
+IP=$(curl -s checkip.amazonaws.com)
+echo "Aguardando TOKEN (geralmente 1 min)"
+while [ "$(docker logs automl | grep token | grep 127. | grep NotebookApp | wc -l)" != "1" ]; do
+  printf "."
+  sleep 1
+done
+echo "Token Pronto."
+TOKEN=$(docker logs automl | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
+
+echo ""
+echo ""
+echo "Config OK"
+echo ""
+echo ""
+echo "URLs do projeto:"
+echo ""
+echo " - JUPYTER AUTO ML      : http://$IP:8789/?token=$TOKEN"
+echo ""
+echo " - MLFLOW UI            : http://$IP:8089"
+echo ""
+echo " - OPEN METADATA        : http://$IP:8585   (login = admin@open-metadata.org, password = admin)"
+echo ""
