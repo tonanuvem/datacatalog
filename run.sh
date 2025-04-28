@@ -20,6 +20,7 @@ echo ""
 
 ### JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML:
 
+docker-compose -f docker-compose-jupyter.yml up -d
 #docker run -it --name automl -v ${PWD}/ml:/opt/nb -p 8789:8888 -d mfeurer/auto-sklearn:master /bin/bash -c "mkdir -p /opt/nb && jupyter notebook --notebook-dir=/opt/nb --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
 #sudo yum install -y swig python3-devel
 
