@@ -1,5 +1,16 @@
 # TRABALHO CONTEMPLA AS SEGUINTES FERRAMENTAS:
 
+## MYSQL e KAFKA 
+
+echo ""
+echo "Executando os componentes da solução:"
+echo ""
+docker-compose -f docker-compose-curso.yml up -d
+echo ""
+echo "Configurando o CDC"
+echo ""
+sh config_cdc.sh
+
 ## JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML
 
 ## ML FLOW PARA DEMONSTRAR FLUXO DE MLOPS
