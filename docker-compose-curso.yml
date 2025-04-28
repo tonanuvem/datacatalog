@@ -41,7 +41,6 @@ services:
       - "2181:2181"
     networks:
       - app_net
-    restart: always      
 
   kafka:
     image: "confluentinc/cp-kafka:5.4.9"
@@ -58,8 +57,7 @@ services:
     networks:
       - app_net
     depends_on:
-      - zookeeper
-    restart: always      
+      - zookeeper 
   
   # Ferramenta CDC (Change Data Capture)
   connect:
@@ -100,7 +98,4 @@ volumes:
 
 networks:
   app_net:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.240.0/24"
+    external: true
