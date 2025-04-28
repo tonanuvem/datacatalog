@@ -264,10 +264,8 @@ services:
       WEB_CONF_CACHE_CONTROL: ${WEB_CONF_CACHE_CONTROL:-""}
       WEB_CONF_PRAGMA: ${WEB_CONF_PRAGMA:-""}
     depends_on:
-      elasticsearch:
-        condition: service_healthy
-      mysql:
-        condition: service_healthy
+      - elasticsearch
+      - mysql
     networks:
       - app_net
 
