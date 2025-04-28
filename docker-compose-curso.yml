@@ -3,7 +3,7 @@
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: mysqldb
-      PMA_PORT: 3306
+      PMA_PORT: 3366
       PMA_ARBITRARY: 1
       PMA_USER: admin
       PMA_PASSWORD: admin
@@ -21,6 +21,6 @@
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     ports:
-      - "3306:3306"
+      - "3366:3306"
     volumes:
       - mysqldata:/var/lib/mysql
