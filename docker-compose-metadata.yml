@@ -16,14 +16,14 @@ volumes:
   es-data:
 services:
   mysql:
-    container_name: openmetadata_mysql
+    #container_name: openmetadata_mysql
     image: docker.getcollate.io/openmetadata/db:1.7.0
     command: "--sort_buffer_size=10M"
-    restart: always
+    #restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
-    expose:
-      - 3306
+    #expose:
+    #  - 3306
     ports:
       - "3306:3306"
     volumes:
