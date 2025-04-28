@@ -472,12 +472,9 @@ services:
       - "8585:8585"
       - "8586:8586"
     depends_on:
-      - elasticsearch #:
-      #  condition: service_healthy
-      - mysql #:
-      #  condition: service_healthy
-      - execute-migrate-all:
-      #  condition: service_completed_successfully
+      - elasticsearch
+      - mysql
+      - execute-migrate-all
     networks:
       - app_net
     healthcheck:
@@ -487,12 +484,9 @@ services:
     container_name: openmetadata_ingestion
     image: docker.getcollate.io/openmetadata/ingestion:1.7.0
     depends_on:
-      elasticsearch:
-        condition: service_started
-      mysql:
-        condition: service_healthy
-      openmetadata-server:
-        condition: service_started
+      - elasticsearch
+      - mysql
+      - openmetadata-server
     environment:
       AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session"
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
