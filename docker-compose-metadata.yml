@@ -472,13 +472,13 @@ services:
       - "8585:8585"
       - "8586:8586"
     depends_on:
-      elasticsearch:
-        condition: service_healthy
-      mysql:
-        condition: service_healthy
-      execute-migrate-all:
-        condition: service_completed_successfully
-    networks:
+      - elasticsearch #:
+      #  condition: service_healthy
+      - mysql #:
+      #  condition: service_healthy
+      - execute-migrate-all:
+      #  condition: service_completed_successfully
+    networks #:
       - app_net
     healthcheck:
       test: [ "CMD", "wget", "-q", "--spider",  "http://localhost:8586/healthcheck" ]
