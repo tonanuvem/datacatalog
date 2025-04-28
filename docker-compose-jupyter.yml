@@ -14,7 +14,4 @@ services:
 
 networks:
   app_net:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.240.0/24"
+    external: true
