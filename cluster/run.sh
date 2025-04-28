@@ -63,17 +63,17 @@ done
 echo ""
 echo "Configurando o CDC"
 echo ""
-sh config_cdc.sh
+sh ../config_cdc.sh
 ### URLs DO PROJETO:
 
 IP=$(curl -s checkip.amazonaws.com)
 echo "Aguardando TOKEN (geralmente 1 min)"
-while [ "$(docker logs automl | grep token | grep 127. | grep NotebookApp | wc -l)" != "1" ]; do
+while [ "$(docker service logs dataops_automl | grep token | grep 127. | grep NotebookApp | wc -l)" != "1" ]; do
   printf "."
   sleep 1
 done
 echo "Token Pronto."
-TOKEN=$(docker logs automl | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
+TOKEN=$(docker service logs dataops_automl | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
 
 echo ""
 echo ""
