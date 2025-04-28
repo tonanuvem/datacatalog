@@ -7,9 +7,7 @@ echo "Executando os componentes da solução:"
 echo ""
 docker-compose -f docker-compose-curso.yml up -d
 echo ""
-echo "Configurando o CDC"
-echo ""
-sh config_cdc.sh
+
 
 ## JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML
 
@@ -54,6 +52,10 @@ while [ "$(docker logs openmetadata_server 2>&1 | grep "$OPENMETADATA_msglog" | 
   sleep 1
 done
 
+echo ""
+echo "Configurando o CDC"
+echo ""
+sh config_cdc.sh
 ### URLs DO PROJETO:
 
 IP=$(curl -s checkip.amazonaws.com)
