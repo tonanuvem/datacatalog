@@ -27,6 +27,7 @@ sudo yum install -y swig python3-devel
 
 ### ML FLOW PARA DEMONSTRAR FLUXO DE MLOPS:
 
+#docker run -d --name mlflow-container -e TZ=UTC -p 5000:5000 ubuntu/mlflow:2.1.1_1.0-22.04_stable
 python3 -m venv mlflow
 source mlflow/bin/activate
 pip install mlflow
