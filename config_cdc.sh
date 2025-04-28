@@ -13,15 +13,15 @@ curl -s -X POST http://localhost:8073/connectors \
       "name": "curso-mysql-connector",
       "config": {
         "connector.class": "io.debezium.connector.mysql.MySqlConnector",
-        "database.hostname": "mysqldb",
+        "database.hostname": "cursomysql",
         "database.port": "3306",
         "database.user": "root",
         "database.password": "admin",
         "database.server.id": "223344",
-        "database.server.name": "cursomysqldb",
+        "database.server.name": "cursomysql",
         "database.include.list": "curso",
         "database.history.kafka.bootstrap.servers": "kafka:9092",
-        "database.history.kafka.topic": "mysqldb.curso",
+        "database.history.kafka.topic": "cursomysql.curso",
         "include.schema.changes": "true"
       }
     }' \
