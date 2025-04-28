@@ -80,5 +80,18 @@ services:
       - zookeeper
       - kafka
 
+  # ferramenta visualização Kafka
+  kowl:
+    image: quay.io/cloudhut/kowl:v1.5.0
+    restart: on-failure
+    hostname: kowl
+    ports:
+    - "8070:8080"
+    volumes:
+    - ./kowl_config.yaml:/etc/kowl/config.yaml
+    entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
+    depends_on:
+      - kafka
+      
 volumes:
   mysqldata:
