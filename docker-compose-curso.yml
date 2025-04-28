@@ -11,7 +11,7 @@ services:
       PMA_PASSWORD: admin
     ports:
       - 8082:80  
-    network:
+    networks:
       - app_net
     depends_on: 
       - cursomysqldb
@@ -26,7 +26,7 @@ services:
       MYSQL_PASSWORD: admin
     ports:
       - "3366:3306"
-    network:
+    networks:
       - app_net
     volumes:
       - mysqldata:/var/lib/mysql
@@ -39,7 +39,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181    
     ports: 
       - "2181:2181"
-    network:
+    networks:
       - app_net
     restart: always      
 
@@ -55,7 +55,7 @@ services:
       KAFKA_MIN_INSYNC_REPLICAS: 1      
     ports: 
       - "9092:9092"
-    network:
+    networks:
       - app_net
     depends_on:
       - zookeeper
@@ -74,7 +74,7 @@ services:
       STATUS_STORAGE_TOPIC: "cdc_connect_statuses"
     ports:
       - "8073:8083"
-    network:
+    networks:
       - app_net
     depends_on:
       - zookeeper
@@ -87,6 +87,8 @@ services:
     hostname: kowl
     ports:
     - "8070:8080"
+    networks:
+      - app_net
     volumes:
     - ./kowl_config.yaml:/etc/kowl/config.yaml
     entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
