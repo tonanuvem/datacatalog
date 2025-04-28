@@ -35,9 +35,9 @@ mlflow server --host 0.0.0.0 --port 8089 &
 
 ### OPEN METADATA:
 
-curl -sL -o docker-compose.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
+curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 
-docker-compose -f docker-compose.yml up --detach
+docker-compose -f docker-compose-metadata.yml up --detach
 
 AIRFLOW_msglog="INFO - Starting the scheduler"
 OPENMETADATA_msglog="Started application"
@@ -70,6 +70,8 @@ echo "Config OK"
 echo ""
 echo ""
 echo "URLs do projeto:"
+echo ""
+echo " - PHPMYADMIN MYSQL UI  : http://$IP:3999"
 echo ""
 echo " - JUPYTER AUTO ML      : http://$IP:8789/?token=$TOKEN"
 echo ""
