@@ -9,5 +9,20 @@ echo "Debezium CDC is up"
 echo "Configurando CDC para MySQL"
 curl -s -X POST http://localhost:8073/connectors \
   -H "accept: */*" -H "Content-Type: application/json" \
-  -d @connectors_config/mysql.json \
+  -d '{
+      "name": "curso-mysql-connector",
+      "config": {
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+        "database.hostname": "mysqldb",
+        "database.port": "3366",
+        "database.user": "root",
+        "database.password": "admin",
+        "database.server.id": "223344",
+        "database.server.name": "mysqldb",
+        "database.include.list": "curso",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.topic": "mysqldb.curso",
+        "include.schema.changes": "true"
+      }
+    }' \
   | python -mjson.tool
