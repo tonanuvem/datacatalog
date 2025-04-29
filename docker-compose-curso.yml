@@ -81,7 +81,7 @@ services:
   # ferramenta visualização Kafka
   kowl:
     image: quay.io/cloudhut/kowl:v1.5.0
-    restart: on-failure
+    #restart: on-failure
     hostname: kowl
     ports:
     - "8070:8080"
