@@ -19,9 +19,9 @@ curl -s -X POST http://localhost:8073/connectors \
         "database.password": "admin",
         "database.server.id": "223344",
         "database.server.name": "cursomysql",
-        "database.include.list": "curso",
+        "database.include.list": "fiap",
         "database.history.kafka.bootstrap.servers": "kafka:9092",
-        "database.history.kafka.topic": "cursomysql.curso",
+        "database.history.kafka.topic": "cursomysql.fiap",
         "include.schema.changes": "true"
       }
     }' \
