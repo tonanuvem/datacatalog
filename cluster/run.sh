@@ -1,7 +1,7 @@
 # RUN
 
 # TRABALHO CONTEMPLA AS SEGUINTES FERRAMENTAS:
-docker network create --driver overlay net_app
+docker network create --driver overlay app_net
 docker stack deploy --compose-file docker-compose-visualizador.yml dataops
 
 ## MYSQL e KAFKA 
