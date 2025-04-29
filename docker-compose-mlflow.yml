@@ -25,6 +25,8 @@ services:
       - POSTGRESQL_USERNAME=fiap
       - POSTGRESQL_PASSWORD=fiap1234
       - POSTGRESQL_DATABASE=mlflow
+    volumes:
+      - pg_data:/bitnami/postgresql
 
   minio:
     image: docker.io/bitnami/minio:latest
@@ -36,6 +38,8 @@ services:
       - MINIO_ROOT_USER=fiap
       - MINIO_ROOT_PASSWORD=fiap1234
     command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
 
   minio-mc:
     image: minio/mc:latest
@@ -52,3 +56,7 @@ services:
 networks:
   app_net:
     external: true
+
+volumes:
+  minio_data:
+  pg_data:
