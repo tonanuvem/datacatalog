@@ -463,9 +463,9 @@ services:
       WEB_CONF_CACHE_CONTROL: ${WEB_CONF_CACHE_CONTROL:-""}
       WEB_CONF_PRAGMA: ${WEB_CONF_PRAGMA:-""}
     
-    expose:
-      - 8585
-      - 8586
+    #expose:
+    #  - 8585
+    #  - 8586
     ports:
       - "8585:8585"
       - "8586:8586"
@@ -508,8 +508,8 @@ services:
     entrypoint: /bin/bash
     command:
       - "/opt/airflow/ingestion_dependency.sh"
-    expose:
-      - 8080
+    #expose:
+    #  - 8080
     ports:
       - "8080:8080"
     networks:
