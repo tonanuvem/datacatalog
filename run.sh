@@ -67,6 +67,12 @@ while [ "$(docker logs automl | grep token | grep 127. | grep NotebookApp | wc -
 done
 echo "Token Pronto."
 TOKEN=$(docker logs automl | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
+echo ""
+echo "Aguardando MySQL."
+while [ "$(docker logs mysqldb 2>&1 | grep "port: 3306  MySQL Community Server" | wc -l)" != "1" ]; do
+  printf "."
+  sleep 1
+done
 
 echo ""
 echo ""
