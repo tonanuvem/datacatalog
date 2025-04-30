@@ -17,8 +17,8 @@ services:
       - cursomysql
     
   cursomysql:
-    #image: mysql:5.7 # bd vazio, sobe mais rapido
-    image: tonanuvem/mysql:curso_db # bd com a tabela curso
+    image: mysql:5.7 # bd vazio, sobe mais rapido
+    #image: tonanuvem/mysql:curso_db # bd com a tabela curso
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: fiap
@@ -30,6 +30,8 @@ services:
       - app_net
     volumes:
       - mysqldata:/var/lib/mysql
+      - "./mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
+      - "./mysql.cnf:/etc/mysql/conf.d/mysql.cnf"
 
 # EVENT STREAMING : usando kafka
 
