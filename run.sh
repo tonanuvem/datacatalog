@@ -1,6 +1,6 @@
 # TRABALHO CONTEMPLA AS SEGUINTES FERRAMENTAS:
 
-docker network create --driver overlay app_net
+docker network create --driver brigde app_net
 
 ## MYSQL e KAFKA 
 
