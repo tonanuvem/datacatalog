@@ -17,7 +17,7 @@ services:
       - cursomysql
     
   cursomysql:
-    image: mysql:5.7 # bd vazio, sobe mais rapido
+    image: mysql:9 # bd vazio, sobe mais rapido
     #image: tonanuvem/mysql:curso_db # bd com a tabela curso
     environment:
       MYSQL_ROOT_PASSWORD: admin
