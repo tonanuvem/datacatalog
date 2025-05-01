@@ -30,7 +30,8 @@ services:
       - app_net
     volumes:
       #- mysqldata:/var/lib/mysql
-      - "./mysql/mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
+      #- "./mysql/mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
+      - "./mysql/init:/docker-entrypoint-initdb.d"
       - "./mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf"
 
 # EVENT STREAMING : usando kafka
