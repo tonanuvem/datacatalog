@@ -1,6 +1,6 @@
 # datacatalog + datadiscovery + datalineage + datagovernance + datametrics
 
-<img width="464" alt="image" src="https://github.com/user-attachments/assets/648404c0-48a0-4be3-9735-ebb47164a6f9" />
+<img width="650" alt="image" src="https://github.com/user-attachments/assets/648404c0-48a0-4be3-9735-ebb47164a6f9" />
 
 
 ## 💡 Como aplicar esses testes em DataOps
