@@ -1,6 +1,6 @@
 # trabalhodataops
 
-💡 Como aplicar esses testes em DataOps
+## 💡 Como aplicar esses testes em DataOps
 
 Esses testes podem ser incorporados em pipelines de dados usando frameworks como Great Expectations, dbt, ou validadores SQL customizados. A prática recomendada é iniciar com os testes básicos (schema, volume, validade) e evoluir conforme o conhecimento do domínio aumenta.
 
