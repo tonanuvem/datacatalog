@@ -17,3 +17,5 @@ docker volume ls -q | grep relatoriosbi | while read volume; do
   docker volume rm "$volume"
 done
 echo ""
+
+docker network rm app_net
