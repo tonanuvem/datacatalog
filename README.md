@@ -3,7 +3,7 @@
 <img width="650" alt="image" src="https://github.com/user-attachments/assets/648404c0-48a0-4be3-9735-ebb47164a6f9" />
 
 
-## 💡 Como aplicar esses testes em DataOps
+## 💡 Como garantir Qualidade dos Dados em DataOps usando testes
 
 Esses testes podem ser incorporados em pipelines de dados usando frameworks como Great Expectations ou dbt. A prática recomendada é iniciar com os testes básicos (schema, volume, validade) e evoluir conforme o conhecimento do domínio aumenta.
 
