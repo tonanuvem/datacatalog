@@ -41,7 +41,7 @@ Esses testes podem ser incorporados em pipelines de dados usando frameworks como
 
 #### Exemplo:
 
-    Esperar que a tabela curso tenha entre 900 e 1.100 registros diariamente.
+    Esperar que a tabela curso tenha entre 19.000 e 21.100 registros.
 
 ## 📏 3. Testes de Validade (Validity Tests)
 
@@ -50,7 +50,7 @@ Esses testes podem ser incorporados em pipelines de dados usando frameworks como
 #### Tipos de testes:
 a) Conjuntos finitos (valores fixos permitidos):
 
-    Valores devem estar dentro de um conjunto (ex.: PERFIL ∈ {“iniciante”, “intermediario”, “avançado”}).
+    Valores devem estar dentro de um conjunto (ex.: PERFIL ∈ {“DIFICULDADE”, “MUITO BOM”, “EXCELENTE”}).
 
     Valores não devem estar em um conjunto (ex.: PERFIL ≠ “inválido”).
 
@@ -70,7 +70,7 @@ c) Formato (shape):
 
     Verificar se o valor segue um padrão (MATRICULA com 6 dígitos numéricos).
 
-    Garantir que certos padrões não estejam presentes (ex.: não permitir SSN).
+    Garantir que certos padrões não estejam presentes (ex.: não permitir ALUNO COM NOTA ZERO E SEM REPROVAÇÃO).
 
 ## 🆔 4. Testes de Unicidade (Uniqueness Tests)
 
@@ -90,7 +90,7 @@ c) Formato (shape):
 
 #### Tipos de verificação:
 
-    Entre colunas: Consistência interna. Ex: se REPROVACOES_MAT_1 > 0, então NOTA_MAT_1 deve ser < 5.
+    Entre colunas: Consistência interna. Ex: se REPROVACOES_MAT_1 > 0, então NOTA_MAT_1 deve ser < 4.
 
-    Entre tabelas: Validar que MATRICULA existe em uma tabela estudantes.
+    Entre tabelas: Validar que MATRICULA existe em uma tabela CURSO.
 
