@@ -44,3 +44,10 @@ log_bin           = mysql-bin
 binlog_format     = row
 
 #default_authentication_plugin = mysql_native_password  
+
+# ----------------------------------------------
+# Configs de acordo com a documentacao do open metadata mysql connector
+# ---------------------------------------------- 
+[mysqld]
+general_log = 1
+log_output = TABLE
