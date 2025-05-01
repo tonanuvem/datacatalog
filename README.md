@@ -1,4 +1,4 @@
-# datacatalog + datadiscovery + datalineage + datagovernance + datametrics
+# datacatalog + datadiscovery + datalineage + datagovernance
 
 <img width="650" alt="image" src="https://github.com/user-attachments/assets/648404c0-48a0-4be3-9735-ebb47164a6f9" />
 
