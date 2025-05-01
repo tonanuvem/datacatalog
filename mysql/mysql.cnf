@@ -48,6 +48,5 @@ binlog_format     = row
 # ----------------------------------------------
 # Configs de acordo com a documentacao do open metadata mysql connector
 # ---------------------------------------------- 
-[mysqld]
 general_log = 1
 log_output = TABLE
