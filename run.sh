@@ -45,10 +45,11 @@ while [ "$(docker logs openmetadata_server 2>&1 | grep "$OPENMETADATA_msglog" | 
   sleep 1
 done
 
-echo ""
-echo "Configurando o CDC"
-echo ""
-sh config_cdc.sh
+#echo ""
+#echo "Configurando o CDC"
+#echo ""
+# docker-compose -f docker-compose-eventos.yml up -d
+#sh config_cdc.sh
 
 ### URLs DO PROJETO:
 
