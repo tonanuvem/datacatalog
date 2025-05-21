@@ -18,5 +18,5 @@ docker volume ls -q | grep relatoriosbi | while read volume; do
 done
 echo ""
 
-docker network rm app_net
+#docker network rm app_net
 docker network rm datacatalog_app_net
