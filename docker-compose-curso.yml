@@ -101,5 +101,10 @@ volumes:
   mysqldata:
 
 networks:
+#  app_net:
+#    external: true
   app_net:
-    external: true
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.240.0/24"
