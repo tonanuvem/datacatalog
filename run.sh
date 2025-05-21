@@ -1,7 +1,12 @@
 # TRABALHO CONTEMPLA AS SEGUINTES FERRAMENTAS:
 
-docker network create app_net
-
+#docker network create app_net
+echo ""
+echo "Parando todos os containers em execução... evitando conflito de portas..."
+echo ""
+docker ps -q | xargs -r docker stop
+echo ""
+echo "Todos os containers foram parados."
 
 ## MYSQL e KAFKA 
 
