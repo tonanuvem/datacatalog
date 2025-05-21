@@ -1,6 +1,6 @@
 # Rodar em cluster nao estava funcionando, vamos rodar local.
 
-#curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
+curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 
 docker-compose -f docker-local-metadata.yml up -d
 #docker-compose -f docker-local-openmetadata.yml up -d
