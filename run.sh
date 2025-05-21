@@ -47,12 +47,12 @@ sh config_cdc.sh
 
 IP=$(curl -s checkip.amazonaws.com)
 echo "Aguardando TOKEN (geralmente 1 min)"
-while [ "$(docker logs datacatalog-automl-1 | grep token | grep 127. | grep NotebookApp | wc -l)" != "1" ]; do
+while [ "$(docker logs datacatalog-automl-1 2>&1 | grep token | grep 127. | grep NotebookApp | wc -l)" != "1" ]; do
   printf "."
   sleep 1
 done
 echo "Token Pronto."
-TOKEN=$(docker logs datacatalog-automl-1 | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
+TOKEN=$(docker logs datacatalog-automl-1 2>&1 | grep token | grep 127. | grep NotebookApp | sed -n 's/.*?token=\([a-f0-9]*\).*/\1/p')
 echo ""
 echo "Aguardando MySQL."
 while [ "$(docker logs datacatalog-cursomysql-1 2>&1 | grep "port: 3306  MySQL Community Server" | wc -l)" != "1" ]; do
