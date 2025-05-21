@@ -61,3 +61,12 @@ service:
     entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
     depends_on:
       - kafka
+
+networks:
+#  app_net:
+#    external: true
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.240.0/24"
