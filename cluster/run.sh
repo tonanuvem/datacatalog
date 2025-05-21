@@ -47,6 +47,8 @@ echo "Rodando local o OPEN METADATA"
 echo ""
 sh local_run_openmetadata.sh
 
+# rodando no cluster nao ta funcionando
+# docker stack deploy --compose-file docker-swarm-openmetadata.yml dataops
 
 echo ""
 echo "Configurando o CDC"
