@@ -19,3 +19,4 @@ done
 echo ""
 
 docker network rm app_net
+docker network rm datacatalog_app_net
