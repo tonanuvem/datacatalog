@@ -45,7 +45,7 @@ docker stack deploy --compose-file docker-compose-jupyter.yml dataops
 echo ""
 echo "Rodando local o OPEN METADATA"
 echo ""
-sh run_local_openmetadata.sh
+sh local_run_openmetadata.sh
 
 
 echo ""
