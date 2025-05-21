@@ -3,8 +3,8 @@ services:
   # JUPYTER
   automl:
     image: mfeurer/auto-sklearn:master
-    #volumes:
-    #- ${PWD}/ml:/opt/nb
+    volumes:
+    - ${PWD}/ml:/opt/nb
     ports:
     - 8789:8888
     networks:
