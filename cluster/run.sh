@@ -10,7 +10,7 @@ echo ""
 echo "Executando os componentes da solução:"
 echo ""
 # docker-compose -f docker-compose-curso.yml up -d
-docker stack deploy --compose-file ../docker-compose-curso.yml dataops
+docker stack deploy --compose-file docker-compose-curso.yml dataops
 echo ""
 
 
@@ -25,14 +25,14 @@ echo ""
 
 ### JUPYTER NOTEBOOK PARA DEMONSTRAR AUTO ML:
 
-docker stack deploy --compose-file ../docker-compose-jupyter.yml dataops
+docker stack deploy --compose-file docker-compose-jupyter.yml dataops
 #docker-compose -f docker-compose-jupyter.yml up -d
 #docker run -it --name automl -v ${PWD}/ml:/opt/nb -p 8789:8888 -d mfeurer/auto-sklearn:master /bin/bash -c "mkdir -p /opt/nb && jupyter notebook --notebook-dir=/opt/nb --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
 #sudo yum install -y swig python3-devel
 
 ### ML FLOW PARA DEMONSTRAR FLUXO DE MLOPS:
 
-docker stack deploy --compose-file ../docker-compose-mlflow.yml dataops
+#docker stack deploy --compose-file ../docker-compose-mlflow.yml dataops
 #docker run -d --name mlflow-container -e TZ=UTC -p 5000:5000 ubuntu/mlflow:2.1.1_1.0-22.04_stable
 #python3 -m venv mlflow
 #source mlflow/bin/activate
@@ -42,7 +42,7 @@ docker stack deploy --compose-file ../docker-compose-mlflow.yml dataops
 
 ### OPEN METADATA:
 
-docker stack deploy --compose-file ../docker-compose-metadata.yml dataops
+docker stack deploy --compose-file docker-compose-metadata.yml dataops
 #curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 #docker-compose -f docker-compose-metadata.yml up -d
 
