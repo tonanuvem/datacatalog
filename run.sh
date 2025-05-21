@@ -79,3 +79,6 @@ echo " - JUPYTER AUTO ML      : http://$IP:8789/?token=$TOKEN"
 echo ""
 echo " - OPEN METADATA        : http://$IP:8585   (login = admin@open-metadata.org, password = admin)"
 echo ""
+
+echo " - AIRFLOW COM EXEMPLOS : http://$IP:8080   (login = admin, password = admin)"
+echo ""
