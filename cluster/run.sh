@@ -42,7 +42,7 @@ docker stack deploy --compose-file docker-compose-jupyter.yml dataops
 
 ### OPEN METADATA:
 
-docker stack deploy --compose-file docker-compose-metadata.yml dataops
+docker stack deploy --compose-file docker-compose-openmetadata.yml dataops
 #curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 #docker-compose -f docker-compose-metadata.yml up -d
 
