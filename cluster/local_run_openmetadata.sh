@@ -1,8 +1,8 @@
 # Rodar em cluster nao estava funcionando, vamos rodar local.
 
-curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
+#curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 
-docker-compose -f docker-compose-metadata.yml up -d
+docker-compose -f docker-local-metadata.yml up -d
 
 AIRFLOW_msglog="INFO - Starting the scheduler"
 OPENMETADATA_msglog="Started application"
