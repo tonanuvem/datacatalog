@@ -13,5 +13,10 @@ services:
     # command: /bin/bash -c "mkdir -p /opt/nb && apt-get update && apt-get install -y wget && wget -P /opt/nb https://raw.githubusercontent.com/tonanuvem/trabalhodataops/refs/heads/main/ml/mlflow.ipynb && jupyter notebook --notebook-dir=/opt/nb --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
 
 networks:
+#  app_net:
+#    external: true
   app_net:
-    external: true
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.240.0/24"
