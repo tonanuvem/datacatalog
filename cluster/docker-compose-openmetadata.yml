@@ -10,7 +10,6 @@ services:
   mysql:
     image: docker.getcollate.io/openmetadata/db:1.7.0
     command: "--sort_buffer_size=10M"
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
     ports:
