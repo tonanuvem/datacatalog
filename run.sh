@@ -26,6 +26,9 @@ docker-compose -f docker-compose-jupyter.yml up -d
 
 curl -sL -o docker-compose-metadata.yml https://github.com/open-metadata/OpenMetadata/releases/download/1.7.0-release/docker-compose.yml
 
+# comentar (adicionar # no início) da linha que começa com "version:" no arquivo YAML:
+sed -i '/^version:/ s/^/# /'  docker-compose-metadata.yml
+
 docker-compose -f docker-compose-metadata.yml up -d
 
 AIRFLOW_msglog="INFO - Starting the scheduler"
